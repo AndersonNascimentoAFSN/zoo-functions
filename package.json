@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js"
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js",
+    "compilar": "tsc --build --clean && tsc"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,9 @@
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-trybe-fundamentals": "1.1.0",
-    "jest": "25.2.3"
-  },
-  "dependencies": {
+    "jest": "25.2.3",
+    "tslint": "^6.1.3",
     "typescript": "^4.4.4"
-  }
+  },
+  "dependencies": {}
 }

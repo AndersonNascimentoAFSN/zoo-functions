@@ -9,20 +9,20 @@ eslint no-unused-vars: [
 ]
 */
 
-const { hours } = require('./data');
-const data = require('./data');
+// const { hours } = require('./data');
+// const data = require('./data');
 // const { animals } = require('./data');
 
-function animalsByIds(...ids) {
-  const { animals } = data;
-  return animals.filter(({ id }) => ids.includes(id));
-}
+// function animalsByIds(...ids) {
+//   const { animals } = data;
+//   return animals.filter(({ id }) => ids.includes(id));
+// }
 
-function animalsOlderThan(animal, age) {
-  const { animals } = data;
-  return animals.find(({ name }) => name === animal).residents.every(({ age: agersAnimals }) =>
-    agersAnimals >= age);
-}
+// function animalsOlderThan(animal, age) {
+//   const { animals } = data;
+//   return animals.find(({ name }) => name === animal).residents.every(({ age: agersAnimals }) =>
+//     agersAnimals >= age);
+// }
 
 function employeeByName(employeeName) {
   const { employees } = data;
