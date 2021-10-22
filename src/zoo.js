@@ -24,11 +24,11 @@ eslint no-unused-vars: [
 //     agersAnimals >= age);
 // }
 
-function employeeByName(employeeName) {
-  const { employees } = data;
-  return (!employeeName) ? {} : employees.find(({ firstName, lastName }) =>
-    firstName === employeeName || lastName === employeeName);
-}
+// function employeeByName(employeeName) {
+//   const { employees } = data;
+//   return (!employeeName) ? {} : employees.find(({ firstName, lastName }) =>
+//     firstName === employeeName || lastName === employeeName);
+// }
 
 function createEmployee(personalInfo, associatedWith) {
   return { ...personalInfo, ...associatedWith };
