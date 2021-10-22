@@ -1,10 +1,4 @@
-interface IDataEmployee {
-  id: string,
-  firstName: string,
-  lastName: string,
-  managers: Array<string>,
-  responsibleFor: Array<string>,
-}
+import { IDataZooEmployees } from '../data';
 
 interface IPersonalInfo {
   id: string, 
@@ -17,26 +11,18 @@ interface IAssociatedWith {
   responsibleFor: Array<string>
 }
 
-interface IDataZoo {
-  employees: [
-    ...{
-        id: string, 
-        firstName: string, 
-        lastName: string, 
-        managers: Array<string>, 
-        responsibleFor: Array<string>
-    }[]
-  ],
-}
+interface IDataEmployee extends IPersonalInfo, IAssociatedWith {}
 
 function createEmployee(personalInfo: IPersonalInfo, associatedWith: IAssociatedWith) {
   return { ...personalInfo, ...associatedWith };
 }
 
-function addEmployee(dataEmployee: IDataEmployee, dataZoo: IDataZoo) {
+function addEmployee(dataEmployee: IDataEmployee, dataZoo: IDataZooEmployees) {
   const { employees } = dataZoo;
   const { id, firstName, lastName, managers, responsibleFor } = dataEmployee;
 
   const employee = createEmployee({ id, firstName, lastName }, { managers, responsibleFor });
   employees.push(employee);
 }
+
+export default addEmployee;

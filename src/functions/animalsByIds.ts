@@ -1,16 +1,6 @@
-interface IAnimals {
-  animals: [
-    ...{
-      id: string,
-      name: string,
-      popularity: number,
-      location: string,
-      residents: [...{ name: string, sex: string, age: number}[]],
-    }[]
-    ]
-};
+import { IDataZooAnimals } from '../data';
 
-function animalsByIds(data: IAnimals, ...ids: Array<string>) {
+function animalsByIds(data: IDataZooAnimals, ...ids: Array<string>) {
   return data.animals.filter(({ id }: any) => ids.includes(id));
 }
 

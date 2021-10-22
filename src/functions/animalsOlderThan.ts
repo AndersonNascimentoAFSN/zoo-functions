@@ -1,21 +1,11 @@
-interface IAnimals {
-  animals: [
-    ...{
-      id: string,
-      name: string,
-      popularity: number,
-      location: string,
-      residents: [...{ name: string, sex: string, age: number}[]],
-    }[]
-    ]
-};
+import { IDataZooAnimals } from '../data';
 
 interface IAnimalsOlderThan {
   animalName: string,
   ageAnimal: number,
 };
 
-function animalsOlderThan({ animalName, ageAnimal }: IAnimalsOlderThan, data: IAnimals) {
+function animalsOlderThan({ animalName, ageAnimal }: IAnimalsOlderThan, data: IDataZooAnimals) {
   return data.animals.find(({ name }) => name === animalName)
     ?.residents.every(({ age }) => age >= ageAnimal);
 };
