@@ -1,12 +1,4 @@
-// import data from '../data';
-// const { animals } = data;
-
-interface IAnimalsOlderThan {
-  animalName: string,
-  ageAnimal: number,
-}
-
-interface IAnimals extends {
+interface IAnimals {
   animals: [
     ...{
       id: string,
@@ -18,9 +10,14 @@ interface IAnimals extends {
     ]
 };
 
-function animalsOlderThan({ animalName, ageAnimal }: IAnimalsOlderThan, animals: IAnimals) {
-  return animals.find(({ name }) => name === animalName)
+interface IAnimalsOlderThan {
+  animalName: string,
+  ageAnimal: number,
+};
+
+function animalsOlderThan({ animalName, ageAnimal }: IAnimalsOlderThan, data: IAnimals) {
+  return data.animals.find(({ name }) => name === animalName)
     ?.residents.every(({ age }) => age >= ageAnimal);
-}
+};
 
 export default animalsOlderThan;
